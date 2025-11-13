@@ -1,0 +1,72 @@
+:root { color-scheme: light dark; }
+
+html, body { height: 100%; } 
+
+body { 
+margin: 0; 
+font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans
+serif; 
+background: #f8fafc; 
+color: #0b1020; 
+} 
+.page { 
+min-height: 100vh;
+min-height: 100svh; 
+min-height: 100dvh;
+display: flex; 
+flex-direction: column; 
+} 
+main { flex: 1; }
+
+.skip-link{ 
+position: absolute; 
+inset-inline-start: 1rem; 
+inset-block-start: -100%; 
+z-index: 10000; 
+padding: .5rem .75rem; 
+background: #111; 
+color: #fff; 
+border-radius: .5rem; 
+text-decoration: none; 
+} 
+
+.skip-link:focus, 
+.skip-link:focus-visible { inset-block-start: 1rem; } 
+:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; } 
+a, button, input, textarea { outline-offset: 2px; }  
+@media (pointer: coarse){ 
+a, button, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
+}
+
+.site-nav {
+    position: sticky;
+    top: 0; 
+    padding-block-start: calc(.75rem + env(safe-area-inset-top)); 
+    padding-block-end: .75rem; 
+    padding-inline-start: calc(var(--space-md, 1rem) + env(safe-area-inset
+left)); 
+    padding-inline-end:   calc(var(--space-md, 1rem) + env(safe-area-inset
+right)); 
+    background: #2563eb; 
+    color: #fff; 
+    z-index: 100; 
+    isolation: isolate;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1); 
+}
+
+.hero__photo{ 
+inline-size: 200px;      /* или: clamp(150px, 22vw, 200px); тогда sizes 
+меняем соответствующе */ 
+block-size: auto; 
+border-radius: 50%; 
+object-fit: cover; 
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 
+0.1); 
+} 
+
+.site-intro {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
